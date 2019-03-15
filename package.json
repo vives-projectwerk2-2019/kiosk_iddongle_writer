@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/vives-projectwerk2-2019/kiosk_iddongle_writer/issues"
   },
-  "homepage": "https://github.com/vives-projectwerk2-2019/kiosk_iddongle_writer#readme"
+  "homepage": "https://github.com/vives-projectwerk2-2019/kiosk_iddongle_writer#readme",
+  "dependencies": {
+    "mqtt": "^2.18.8"
+  }
 }
