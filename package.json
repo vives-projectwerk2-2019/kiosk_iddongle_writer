@@ -1,0 +1,24 @@
+{
+  "name": "kiosk_iddongle_writer",
+  "version": "1.0.0",
+  "description": "kiosk id dongle writer for bug controller on raspberryPi",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vives-projectwerk2-2019/kiosk_iddongle_writer.git"
+  },
+  "keywords": [
+    "bug",
+    "raspberryPi"
+  ],
+  "author": "Charlotte Pieters",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vives-projectwerk2-2019/kiosk_iddongle_writer/issues"
+  },
+  "homepage": "https://github.com/vives-projectwerk2-2019/kiosk_iddongle_writer#readme"
+}
