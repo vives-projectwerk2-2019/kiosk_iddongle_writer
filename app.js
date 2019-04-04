@@ -1,11 +1,14 @@
 const parseJson = require('parse-json');
 const i2c = require('i2c-bus')
+require('dotenv').config()
 var Validator = require('jsonschema').Validator;
 var v = new Validator();
 const EEPROM = 0x50; //7-bit slave address
 var mqtt = require('mqtt')
 var client  = mqtt.connect('mqtt://mqtt.labict.be')
 var topic = 'test/bug/id'
+var topicPing = 'test/ping'
+
 
 var schema = {
   "id": "/SchemaId",
@@ -43,7 +46,6 @@ client.on('message', function (topic, message) {
       var id = myObj.id
       const bufmessage = new Buffer.from(id,"hex")
       console.log(bufmessage)
-      //("00000000" + myObj.id).slice(-8)
       
       const buf = new Buffer([0x1F,0xE0])
       var buffer = new Buffer(10)
@@ -71,3 +73,7 @@ client.on('message', function (topic, message) {
   }
   
 })
+
+setInterval(() => {
+  client.publish(topicPing, "ping: " + process.env.ID )
+}, 10000)

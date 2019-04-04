@@ -22,7 +22,10 @@
   },
   "homepage": "https://github.com/vives-projectwerk2-2019/kiosk_iddongle_writer#readme",
   "dependencies": {
+    "dotenv": "^7.0.0",
     "i2c-bus": "^4.0.9",
-    "mqtt": "^2.18.8"
+    "jsonschema": "^1.2.4",
+    "mqtt": "^2.18.8",
+    "parse-json": "^4.0.0"
   }
 }
