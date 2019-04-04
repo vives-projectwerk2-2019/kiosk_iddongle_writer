@@ -11,7 +11,8 @@ var schema = {
   "id": "/SchemaId",
   "type": "object",
   "properties": {
-    "id": {"type": "string"}
+    "id": {"type": "string"
+          }
   }
 };
 
@@ -41,6 +42,9 @@ client.on('message', function (topic, message) {
       console.log("Object is validated!");
 
       const bufmessage = new Buffer(myObj.id)
+      console.log(myObj.id)
+      //("00000000" + myObj.id).slice(-8)
+      
       const buf = new Buffer([0x1F,0xE0])
       var buffer = new Buffer(10)
       var arr = [buf, bufmessage];
@@ -53,6 +57,8 @@ client.on('message', function (topic, message) {
       sleep(2000);
 
       i2c1.closeSync();
+      console.log("Done")
+      client.publish(topic,'done')
     }
     else{
       console.log("not validated");
