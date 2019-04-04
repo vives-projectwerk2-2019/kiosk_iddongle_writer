@@ -40,9 +40,9 @@ client.on('message', function (topic, message) {
 
     if(v.validate(myObj, schema).valid){
       console.log("Object is validated!");
-
-      const bufmessage = new Buffer(myObj.id)
-      console.log(myObj.id)
+      var id = myObj.id
+      const bufmessage = new Buffer.from(id,"hex")
+      console.log(bufmessage)
       //("00000000" + myObj.id).slice(-8)
       
       const buf = new Buffer([0x1F,0xE0])

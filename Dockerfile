@@ -5,14 +5,14 @@
 # WORKDIR /app
 
 # Copy package.json first
-#COPY package.json .
-#COPY package-lock.json .
+COPY package.json .
+COPY package-lock.json .
 
 # Install the node modules
-#RUN npm install
+RUN npm install
 
 # Copy the application files
-#COPY . .
+COPY . .
 
 # The final command that starts the app
-#CMD ["npm", "start"]
+CMD ["npm", "start"]
