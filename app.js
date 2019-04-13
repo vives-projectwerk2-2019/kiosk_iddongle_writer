@@ -6,9 +6,9 @@ var v = new Validator();
 const EEPROM = 0x50; //7-bit slave address
 var mqtt = require('mqtt')
 var client = mqtt.connect('mqtt://mqtt.labict.be')
-var topic = 'kiosk/'+process.env.ID +'/program-dongle'
-var topicStatus = 'kiosk/'+process.env.ID +'/status'
-var topicPing = 'kiosk/'+process.env.ID +'/ping'
+var topic = 'kiosk/' + process.env.ID + '/program-dongle'
+var topicStatus = 'kiosk/' + process.env.ID + '/status'
+var topicPing = 'kiosk/' + process.env.ID + '/ping'
 var busy = false;
 
 
@@ -34,7 +34,7 @@ function sleep(milliseconds) {
 client.on('connect', function () {
   client.subscribe(topic, function (err) {
     if (!err) {
-      console.log("Successfully subscribed to kiosk/"+process.env.ID +'/program-dongle')
+      console.log("Successfully subscribed to kiosk/" + process.env.ID + '/program-dongle')
     }
   })
 })
@@ -85,6 +85,6 @@ client.on('message', function (topic, message) {
 
 setInterval(() => {
   if (busy == false) {
-    client.publish(topicPing, "{\"ping\":\"ping\"}") //+process.env.ID +
+    client.publish(topicPing, "{\"ping\":\"ping\"}")
   }
 }, 10000)
